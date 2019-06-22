@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
 
         val dataStream = Observable.just("Test1", "Test2", "Test3")
         val dataStream2 = Observable.just("Test7", "Test8", "Test9")
+        //Merge may interleave the items emitted by the merged Observables
         val dataStream3 = dataStream2.mergeWith(dataStream)
 
         val dataObserver = object : Observer<String> {
